@@ -9,7 +9,7 @@
 
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="multiply">*</string>
+    <string name="multiply">x</string>
     <string name="divide">/</string>
     <string name="equal">=</string>
 
@@ -26,8 +26,7 @@
 
     <string name="decimal">.</string>
     <string name="sign">+/-</string>
-
-
+    <string name="parentesis">( )</string>
 
 
 </resources>

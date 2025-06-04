@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="eigengrau">#19202a</color>
+    <color name="charcoal">#35474f</color>
+    <color name="neon_orange">#ff6531</color>
+    <color name="platinum">#e5e5e5</color>
+    <color name="white_smoke">#f3f3f3</color>
+    <color name="very_light_gray">#fefefe</color>
+
+
+    <color name="dark_charcoal">#222831</color>
+    <color name="orange">#ff6500</color>
+
+</resources>

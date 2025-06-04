@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand">@color/dark_charcoal</color>
+    <color name="accent">@color/eigengrau</color>
+    <color name="text_primary">@color/white_smoke</color>
+    <color name="text_secondary">@color/white</color>
+    <color name="button_primary">@color/charcoal</color>
+    <color name="button_secondary">@color/orange</color>
+
+</resources>
