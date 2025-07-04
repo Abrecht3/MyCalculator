@@ -30,14 +30,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.apply {
-            //Se inician los hijos(botones del teclado) del gridlayout
+            //Se inician los miembros(botones del teclado) del gridlayout
             binding.gridKeyboard.children.filterIsInstance<Button>().forEach { button->
 
                 button.setOnClickListener {
                     //se guarda el texto de cada boton como un string en la variable
                     val btnTxt = button.text.toString()
                     when{
-                        btnTxt.matches(Regex("[0-9]"))->{
+                        btnTxt.matches("[0-9]".toRegex())->{
                             if (operator.isEmpty()){
                                 firstNumber+=btnTxt
                                 tvOperation.text = firstNumber
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                         }
-                        btnTxt.matches(Regex("[+\\-x/]"))->{
+                        btnTxt.matches("[+\\-x/]".toRegex())->{
                             if (tvOperation.text.toString().isNotEmpty()){
                                 operator = btnTxt
                                 tvOperation.text = firstNumber+operator
@@ -88,14 +88,14 @@ class MainActivity : AppCompatActivity() {
                         btnTxt=="."->{
                             if (operator.isEmpty()){
                                 if (! firstNumber.contains(".")){
-                                    if (firstNumber.isEmpty()) firstNumber+="0$btnTxt"
-                                    else firstNumber+=btnTxt
+                                    firstNumber += if (firstNumber.isEmpty()) "0$btnTxt"
+                                    else btnTxt
                                     tvOperation.text = firstNumber
                                 }
                             }else{
                                 if (!currentNumber.contains(".")){
-                                    if (currentNumber.isEmpty()) currentNumber+="0$btnTxt"
-                                    else currentNumber+=btnTxt
+                                    currentNumber += if (currentNumber.isEmpty()) "0$btnTxt"
+                                    else btnTxt
                                     tvResult.text =currentNumber
                                 }
 
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
             "+"->(num1.toInt()+num2.toInt()).toString()
             "-"->(num1.toInt()-num2.toInt()).toString()
             "x"->(num1.toInt()*num2.toInt()).toString()
-            "/"->(num1.toInt()/num2.toInt()).toString()
+            "/"->(num1.toInt()/num2.toInt()).toString()//corregir!!
             else -> ""
         }
     }
